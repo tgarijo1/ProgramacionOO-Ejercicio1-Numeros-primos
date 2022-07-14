@@ -1,0 +1,45 @@
+public class PrimeNumbers {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		primesUntil50();
+		System.out.println("-----------------");
+		firstPrimes50();
+	}
+	
+	
+	public static void primesUntil50() {
+		
+		int add=0;
+		
+		for(int i=2; i<50; i++)
+			if(isPrime(i))   	
+				add +=i;
+							
+		System.out.println("add " + add);			
+	}
+	
+	public static void firstPrimes50() {
+		
+		int i=1, c=1;
+		double add=0;
+		
+		while(c <= 50) {			
+			if(isPrime(i)) { 
+				add +=i;				
+				c++;
+			}
+			i++;
+		}
+		System.out.println("add " + add);
+	}
+	
+	private static boolean isPrime(int i) {
+		int c= 0;
+		for(int x=1; x<i; x++) 
+			if(i%x == 0) c++;
+		
+		return (c==1) ? true : false; 		
+	}	
+}
